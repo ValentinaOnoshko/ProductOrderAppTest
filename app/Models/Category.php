@@ -12,6 +12,16 @@ class Category extends Model
 
     protected $fillable = ['name'];
 
+    public function getId(): int
+    {
+        return $this->getAttribute('id');
+    }
+
+    public function getName(): string
+    {
+        return $this->getAttribute('name');
+    }
+
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);

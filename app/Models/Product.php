@@ -18,9 +18,24 @@ class Product extends Model
         'price',
     ];
 
+    public function getId(): int
+    {
+        return $this->getAttribute('id');
+    }
+
     public function getTitle(): string
     {
         return $this->getAttribute('title');
+    }
+
+    public function getDescription(): string
+    {
+        return $this->getAttribute('description');
+    }
+
+    public function getCategoryId(): int
+    {
+        return $this->getAttribute('category_id');
     }
 
     public function getPrice(): float
@@ -31,6 +46,11 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getCategory(): Category
+    {
+        return $this->getRelationValue('category');
     }
 
     public function orders(): HasMany

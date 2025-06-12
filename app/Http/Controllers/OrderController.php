@@ -47,6 +47,6 @@ class OrderController extends Controller
     public function updateStatus(Order $order): RedirectResponse
     {
         $order->update(['status' => 'выполнен']);
-        return back()->with('success', 'Статус заказа изменён на "выполнен"');
+        return redirect()->back()->with('success', 'Статус заказа изменён на "выполнен"');
     }
 }
