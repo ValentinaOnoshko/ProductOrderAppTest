@@ -16,8 +16,33 @@ class Order extends Model
         'status',
         'comment',
         'product_id',
-        'quantity'
+        'quantity',
     ];
+
+    public function getId(): int
+    {
+        return $this->getAttribute('id');
+    }
+
+    public function getCustomerName(): string
+    {
+        return $this->getAttribute('customer_name');
+    }
+
+    public function getOrderDate(): string
+    {
+        return $this->getAttribute('order_date');
+    }
+
+    public function getStatus(): string
+    {
+        return $this->getAttribute('status');
+    }
+
+    public function getComment(): string
+    {
+        return $this->getAttribute('comment');
+    }
 
     public function getQuantity(): int
     {
