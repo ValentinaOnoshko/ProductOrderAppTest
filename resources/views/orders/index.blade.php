@@ -2,11 +2,12 @@
 
 @section('content')
     <h1>Список заказов</h1>
+    <a href="{{ route('orders.create') }}" class="btn btn-success mb-3">Создать заказ</a>
 
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Дата</th>
             <th>ФИО</th>
             <th>Статус</th>
@@ -15,10 +16,10 @@
         </tr>
         </thead>
         <tbody>
-        @foreach ($orders as $index => $order)
+        @foreach ($orders as $order)
             <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $order->getOrderDate()->format('d.m.Y') }}</td>
+                <td>{{ $order->getId() }}</td>
+                <td>{{ $order->getFormattedOrderDate() }}</td>
                 <td>{{ $order->getCustomerName() }}</td>
                 <td>{{ $order->getStatus() }}</td>
                 <td>{{ $order->formattedTotal() }}</td>
@@ -31,4 +32,7 @@
     </table>
 
     {{ $orders->links() }}
+
+    <a href="{{ route('home') }}" class="btn btn-secondary mb-3">На главную</a>
+    <a href="{{ route('products.index') }}" class="btn btn-secondary mb-3">К товарам</a>
 @endsection

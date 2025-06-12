@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,12 +35,17 @@ class Order extends Model
         return $this->getAttribute('order_date');
     }
 
+    public function getFormattedOrderDate(): string
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->getOrderDate())->format('d.m.Y');
+    }
+
     public function getStatus(): string
     {
         return $this->getAttribute('status');
     }
 
-    public function getComment(): string
+    public function getComment(): ?string
     {
         return $this->getAttribute('comment');
     }

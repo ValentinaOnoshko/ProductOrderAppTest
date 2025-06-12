@@ -26,12 +26,13 @@ class OrderController extends Controller
     {
         $validated = $request->validate([
             'customer_name' => 'required|string|max:255',
-            'order_date' => 'required|date',
             'status' => 'in:новый,выполнен',
             'comment' => 'nullable|string',
             'product_id' => 'required|exists:products,id',
             'quantity' => 'required|integer|min:1',
         ]);
+
+        $validated['order_date'] = now();
 
         Order::create($validated);
 

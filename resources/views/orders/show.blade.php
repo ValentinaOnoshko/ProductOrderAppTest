@@ -7,7 +7,7 @@
         <strong>ФИО:</strong> {{ $order->getCustomerName() }}
     </div>
     <div class="mb-3">
-        <strong>Дата:</strong> {{ $order->getOrderDate()->format('d.m.Y') }}
+        <strong>Дата:</strong> {{  $order->getFormattedOrderDate() }}
     </div>
     <div class="mb-3">
         <strong>Статус:</strong> {{ $order->getStatus() }}
@@ -32,9 +32,9 @@
         <form action="{{ route('orders.updateStatus', $order) }}" method="POST">
             @csrf
             @method('PATCH')
-            <button type="submit" class="btn btn-success">Выполнить заказ</button>
+            <button type="submit" class="btn btn-success mb-3">Выполнить заказ</button>
         </form>
     @endif
 
-    <a href="{{ route('orders.index') }}" class="btn btn-secondary">Назад</a>
+    <a href="{{ route('orders.index') }}" class="btn btn-secondary mb-3">Назад</a>
 @endsection
