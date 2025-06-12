@@ -8,7 +8,7 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>#</th>
+            <th>№</th>
             <th>Название</th>
             <th>Категория</th>
             <th>Цена</th>
@@ -37,4 +37,7 @@
     </table>
 
     {{ $products->links() }}
+
+    <a href="{{ route('home') }}" class="btn btn-secondary mb-3">На главную</a>
+    <a href="{{ route('orders.index') }}" class="btn btn-secondary mb-3">К заказам</a>
 @endsection

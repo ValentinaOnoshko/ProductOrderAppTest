@@ -35,4 +35,6 @@
 
         <button type="submit" class="btn btn-success">Сохранить</button>
     </form>
+
+    <a href="{{ route('products.index') }}" class="btn btn-secondary mb-3">Назад</a>
 @endsection

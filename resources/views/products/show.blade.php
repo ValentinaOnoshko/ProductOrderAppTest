@@ -6,5 +6,5 @@
     <p><strong>Описание:</strong> {{ $product->getDescription() }}</p>
     <p><strong>Цена:</strong> {{ $product->formattedPrice() }}</p>
 
-    <a href="{{ route('products.index') }}" class="btn btn-secondary">Назад</a>
+    <a href="{{ route('products.index') }}" class="btn btn-secondary mb-3">Назад</a>
 @endsection

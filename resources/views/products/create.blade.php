@@ -32,6 +32,8 @@
             <input type="number" step="0.01" name="price" id="price" value="{{ old('price') }}" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-success">Сохранить</button>
+        <button type="submit" class="btn btn-success mb-3">Сохранить</button>
     </form>
+
+    <a href="{{ route('products.index') }}" class="btn btn-secondary mb-3">Назад</a>
 @endsection
