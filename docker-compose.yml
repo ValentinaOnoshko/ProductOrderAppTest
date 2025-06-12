@@ -1,6 +1,6 @@
 services:
     app:
-        image: php:8.2-fpm
+        build: .
         container_name: app
         volumes:
             - .:/var/www/html
@@ -12,8 +12,10 @@ services:
             - "DB_HOST=db"
             - "DB_PORT=3306"
             - "DB_DATABASE=laravel"
-            - "DB_USERNAME=root"
+            - "DB_USERNAME=user"
             - "DB_PASSWORD=111111"
+        ports:
+            - "9000:9000"
 
     db:
         image: mysql:8.0
