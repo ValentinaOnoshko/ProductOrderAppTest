@@ -70,6 +70,6 @@ docker exec -it app php artisan migrate --seed
 
 ## 📞 Контакты
 
-Автор: Валентина Оношко
-Email: che.onoshko@gmail.com  
-Telegram: @ValentinaOnoshko
+- Автор: Валентина Оношко
+- Email: che.onoshko@gmail.com  
+- Telegram: @ValentinaOnoshko
